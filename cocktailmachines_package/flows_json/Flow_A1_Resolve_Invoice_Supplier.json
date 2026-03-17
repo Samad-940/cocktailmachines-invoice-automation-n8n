@@ -1,0 +1,74 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "23e42911-2038-4319-80cd-5c1d34db2566",
+              "leftValue": "={{ $json.error }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "8fefaa4f-4813-4ce5-953e-d78a5f6edb78",
+      "name": "Did AI Work?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -3472,
+        432
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4c7e71ed-ff02-458d-98cd-cec9e4aea5e2",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -4144,
+        432
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "assistant",
+        "assistantId": {
+          "__rl": true,
+          "value": "asst_mzuHs96x8HxGf8qwp3x9sYsX",
+          "mode": "list",
+          "cachedResultName": "Copy of A1 Resolve Invoice Supplier N8N"
+        },
+        "prompt": "define",
+        "text": "=Analyze this Invoice Data:\nFind the supplier for this invoice text:\n\n\nInvoice OCR Text:\n\"\"\"\n{{ JSON.stringify($json.json_text,null,2) }}\n\"\"\"",
+        "options": {
+          "maxRetries": 4
+        }
+      },
+      "id": "240b877d-a81c-40c9-8bea-f60ecb57db88",
+      "name": "Supplier Resolver (AI)1",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [
+        -3968,
+        432
+      ]
+    }
+  ],
+  "_info": "A1 Sub-workflow — Full JSON in conversation document index 2"
+}

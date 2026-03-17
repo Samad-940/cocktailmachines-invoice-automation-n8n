@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "4665cc0c-db7c-4ac9-8de8-8b75137d80ee",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -368,
+        288
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "assistant",
+        "assistantId": {
+          "__rl": true,
+          "value": "asst_o7CcGHLadsypmucRXatWXDT1",
+          "mode": "list",
+          "cachedResultName": " Copy of A3 Purchase Order Matcher N8N"
+        },
+        "prompt": "define",
+        "text": "={\n  \"Invoice\": {{JSON.stringify( $node[\"Parse & Count Orders\"].json.invoice )}},\n  \"validation\": {{ JSON.stringify($node[\"Parse & Count Orders\"].json.validation) }},\n  \"purchase_orders\":{{ JSON.stringify($json.purchase_orders )}}",
+        "options": {}
+      },
+      "id": "1cfa4592-9954-4120-9d23-11300bb8ca6d",
+      "name": "Purchase order Matcher(A3)",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [
+        80,
+        288
+      ]
+    }
+  ],
+  "_info": "A3 Sub-workflow — Full JSON in conversation (last JSON block)"
+}

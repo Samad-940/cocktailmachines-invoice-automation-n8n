@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "ae7d5a7f-35f4-4fc1-ba7c-cb6e2de91aae",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -5136,
+        464
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "assistant",
+        "assistantId": {
+          "__rl": true,
+          "value": "asst_PogHknCOyBE2B9Sw1LfvhfDs",
+          "mode": "list",
+          "cachedResultName": "Copy of A2 Invoice Classifier & Transformer N8N"
+        },
+        "prompt": "define",
+        "text": "={\n  \"ocr_data\": {{ JSON.stringify($json.ocr_data) }},\n  \"SupplierResolutionResult\": {{ $json.supplierinfo }}\n},\n\"document-id\":\n{{ $json[\"document-id\"] }},\n\n",
+        "options": {}
+      },
+      "id": "fddf4f26-14b9-47cc-bab7-c84154b701e9",
+      "name": "Invoice Classifier (AI)1",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [
+        -4912,
+        464
+      ]
+    }
+  ],
+  "_info": "A2 Sub-workflow — Full JSON in conversation document index 3"
+}

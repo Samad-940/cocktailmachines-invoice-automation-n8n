@@ -1,0 +1,69 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5280a70-c467-4f56-a1c8-3654c5464e4f",
+              "name": "text",
+              "value": "={{ $json.extractedText }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {
+          "ignoreConversionErrors": true
+        }
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2800,
+        3632
+      ],
+      "id": "33704c2e-b415-4988-a9d6-8c135a7c13cb",
+      "name": "999"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mistralAi",
+      "typeVersion": 1,
+      "position": [
+        -3088,
+        3632
+      ],
+      "id": "f5a6413e-2cf6-4946-832c-438dea5928c8",
+      "name": "4444"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "readStatus": "both"
+        },
+        "options": {
+          "downloadAttachments": true
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -8400,
+        3520
+      ],
+      "id": "c4030134-08f3-4d95-b552-00a2fa4e6b76",
+      "name": "Gmail Trigger1"
+    }
+  ],
+  "_info": "Main Flow — Full JSON in conversation document index 1"
+}

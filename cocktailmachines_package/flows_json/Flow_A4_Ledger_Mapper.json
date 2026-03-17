@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "39d2a906-f5b1-459e-a17e-f437696a90f4",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -4256,
+        112
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "assistant",
+        "assistantId": {
+          "__rl": true,
+          "value": "asst_TqqlQihpuUeeumOzVeLeZkSj",
+          "mode": "list",
+          "cachedResultName": "Copy of A4 Ledger Mapper N8N"
+        },
+        "prompt": "define",
+        "text": "={\n  \"Invoice\": {{ JSON.stringify($node[\"Parse Input JSON\"].json.invoice) }},\n  \"validation\": {{ JSON.stringify($node[\"Parse Input JSON\"].json.validation) }}\n}",
+        "options": {}
+      },
+      "id": "1e970f2b-405d-4cf3-8fba-4ee37deca66f",
+      "name": "Ledger Matcher",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [
+        -3888,
+        112
+      ]
+    }
+  ],
+  "_info": "A4 Sub-workflow — Full JSON in conversation document index 4"
+}
