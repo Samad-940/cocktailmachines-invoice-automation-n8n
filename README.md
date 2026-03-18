@@ -371,7 +371,7 @@ Includes: architecture diagrams, node-by-node descriptions, flowcharts for every
 
 **Samad Mehboob**  
 n8n Automation Developer  
-Project: CocktailMachines B.V. Invoice Automation — 2028
+Project: CocktailMachines B.V. Invoice Automation — 2026
 Email: **samadmehboob940@gmail.com**
 
 ---
