@@ -252,7 +252,7 @@ x-api-key: your_pdfco_api_key_here
 
 **OpenAI Vector Store ID:**
 ```
-vs_6826ef5e64a0819182f331d03fe628e8
+vs_---------------------------
 ```
 
 ---
@@ -319,10 +319,10 @@ Move invoice file: errors/ → new/
 
 | Assistant | ID | Purpose |
 |-----------|-----|---------|
-| A1 — Supplier Resolver | `asst_mzuHs96x8HxGf8qwp3x9sYsX` | Identifies supplier from OCR text using Vector Store |
-| A2 — Invoice Classifier | `asst_PogHknCOyBE2B9Sw1LfvhfDs` | Classifies type + produces structured UBL JSON |
-| A3 — PO Matcher | `asst_o7CcGHLadsypmucRXatWXDT1` | Matches invoice lines to open purchase orders |
-| A4 — Ledger Mapper | `asst_TqqlQihpuUeeumOzVeLeZkSj` | Assigns general ledger codes to cost invoices |
+| A1 — Supplier Resolver | `asst_-------------------------` | Identifies supplier from OCR text using Vector Store |
+| A2 — Invoice Classifier | `asst_------------------------` | Classifies type + produces structured UBL JSON |
+| A3 — PO Matcher | `asst_-------------------------` | Matches invoice lines to open purchase orders |
+| A4 — Ledger Mapper | `asst_---------------------` | Assigns general ledger codes to cost invoices |
 
 All assistants use the **OpenAI Assistants API v2** with thread-based memory for context continuity.
 
